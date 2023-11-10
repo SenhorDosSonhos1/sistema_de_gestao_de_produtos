@@ -1,7 +1,7 @@
 from controller import CreateUser
 import getpass
 
-#Tipo assim: Quando logar na conta e o sistema seja tipo 'Minha conta' que vai ser onde da pra atualizar senha apagar conta?
+#Quando logar na conta e o sistema seja tipo 'Minha conta' que vai ser onde da pra atualizar senha apagar conta?
 def main():
     print('''
           |||-BEM VINDO A PLATAFORMA-|||
@@ -15,16 +15,16 @@ def register():
     username = input('Username: ') 
     password = getpass.getpass('Password: ')
 
-    print(password)
     user = CreateUser(username, password)
-    # Colocar mensagem de error
-    # O loop deve continuar até o usuario ser vlaido
+
+    # O loop deve continuar até o usuario ser valido
     if user.is_authenticated:
+        print()
         print('Usuario Criado com sucesso!!!')
-        #quit()
+        quit()
     else:
-        print('Ops')
-        #user.message[0]
+        # Mensagens de error
+        print(f'Ops: {user.message}')
         print()
     
 def login():
